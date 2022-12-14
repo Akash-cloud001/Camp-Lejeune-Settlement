@@ -102,7 +102,7 @@ footer{
 .main-img >img{
     /* height: 300px; */
     display: block;
-    width: max(80%, 280px);
+    width: max(60%, 280px);
     margin-inline: auto;
 }
 
@@ -111,6 +111,7 @@ footer{
 /* Section-1 */
 .about-p{
     color: var(--ff-color-grey);
+    font-size: medium;
 }
 
 
