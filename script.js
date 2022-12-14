@@ -34,17 +34,21 @@ $(document).ready(()=>{
 
     }
     function surveyAnalysis(){
-        console.log(userAnswers, answers);
-        let flag="" ;
-        for(let i=0; i<answers.length; i++){
-            if(answers[i] != userAnswers[i]){
-                flag = "1$ PER MINUTE"
-                break;
-            }
-        }
-        if(flag === ""){
-            flag = "FREE CONSULTATION CALL";
-        }
+        // We can Add the answer mapping using below code
+        // console.log(userAnswers, answers);
+        // let flag=""; 
+        // let flag2="";
+        // for(let i=0; i<answers.length; i++){
+        //     if(answers[i] != userAnswers[i]){
+        //         flag = "1$ PER MINUTE";
+        //         flag2 = "Not";
+        //         break;
+        //     }
+        // }
+        // if(flag === ""){
+        //     flag = "FREE CONSULTATION CALL";
+        //     flag2 ="";
+        // }
         surveyQuestion.addClass('hide');
         surveyButtons.addClass('hide');
         hiddenContent.removeClass('hide');
@@ -68,6 +72,8 @@ $(document).ready(()=>{
                     clearInterval(intervalId);
                     setTimeout(()=>{
                         hiddenContent.addClass('hide');
+                        $(".survey-message").removeClass('hide');
+                        $(".hr-line").addClass('hide');
                     },1000);
                 }
             }, 1000);

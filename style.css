@@ -13,6 +13,8 @@
     --ff-color-red: hsl(5, 100%, 50%);
     --ff-color-yellow: hsl(56, 100%, 50%);
     --ff-color-orange: hsl(44deg 100% 50%);
+    --ff-color-green: hsl(107deg 85% 47%);
+    --ff-color-darkGreen: rgb(53, 192, 14);
     --ff-color-grey: hsl(206deg 15% 43%);
     --ff-color-lightgrey:hsl(206deg 5% 70%);
     /* paddings */
@@ -89,6 +91,7 @@ footer{
 }
 .yellow-bg{
     background-color: var(--ff-color-yellow);
+    width: fit-content;
 }
 
 .main-img{
@@ -148,6 +151,54 @@ footer{
     border-top: 5px solid var(--ff-color-navBar);
     background: whitesmoke;
 }
+
+
+.survey-message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 5px solid var(--ff-color-navBar);
+    padding: calc(var(--section-padding-60) /2) var(--section-padding-60) ;
+    font-size: 1.3rem;
+    font-weight: 800;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+.survey-message p, h1{
+    margin-bottom: calc(var(--section-padding-30) / 2);
+}
+.survey-telephone{
+    display: block;
+    width: 100%;
+    background-color: var(--ff-color-green);
+    padding: calc(var(--section-padding-30) / 3) 0px;
+    border-radius: 8px;
+    color: white;
+    transition: box-shadow 250ms ;
+    text-decoration: none;
+    animation: flash 1s linear infinite alternate;
+}
+@keyframes flash{
+    from{
+        background-color: var(--ff-color-green);
+        box-shadow: var(--ff-color-darkGreen) 0px 0px 19px 0px;
+    }
+    to{
+        background-color: var(--ff-color-darkGreen);
+        box-shadow: var(--ff-color-darkGreen) 0px 0px 19px 0px;
+    }
+}
+
+.survey-policy{
+    font-size: 0.8rem;
+    text-align: justify;
+    padding-top: calc(var(--section-padding-30)) ;
+    color: var(--ff-color-lightgrey);
+    font-weight: 400;
+}
+
+
+
 .hide{
     display: none;
 }
@@ -173,6 +224,9 @@ footer{
         padding: var(--section-padding-30) calc(var(--section-padding-30) / 2);
         text-align: center;
         font-size: 1.2rem;
+    }
+    .survey-message{
+        padding: calc(var(--section-padding-30) /2) var(--section-padding-30);
     }
 }
 
@@ -209,5 +263,9 @@ footer{
 
     .survey-question {
         font-size: 1.2rem;
+    }
+    .survey-message{
+        font-size: 1rem;
+        padding: calc(var(--section-padding-30) /2) calc(var(--section-padding-30) /2);
     }
 }
