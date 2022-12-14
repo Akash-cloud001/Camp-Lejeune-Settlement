@@ -11,6 +11,7 @@
     /* colors */
     --ff-color-red: hsl(5, 100%, 50%);
     --ff-color-yellow: hsl(56, 100%, 50%);
+    --ff-color-orange: hsl(44deg 100% 50%);
     --ff-color-grey: hsl(206deg 15% 43%);
     --ff-color-lightgrey:hsl(206deg 5% 70%);
     /* paddings */
@@ -49,6 +50,8 @@ footer{
     color: var(--ff-color-lightgrey);
 }
 
+/* Navigation-Bar */
+
 .nav-bar{
     height: 50px;
     display: flex;
@@ -66,6 +69,8 @@ footer{
     height: 40px;
 }
 
+
+/* Hero / Main */
 .hero{
     width: var(--section-width);
     padding: var(--section-padding-30) 0px;
@@ -97,9 +102,43 @@ footer{
     margin-inline: auto;
 }
 
+/* Sections */
+
+/* Section-1 */
 .about-p{
     color: var(--ff-color-grey);
 }
+
+
+/* Survey Section */
+
+.survey-question{
+    color:black;
+    font-size: 1.7rem;
+}
+
+.survey-buttons > button{
+    display: block;
+    width: 100%;
+    height: 3rem;
+    border: none;
+    background: var(--ff-color-orange);
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+}
+.survey-buttons > button:active{
+    color: black;
+}
+.yes-btn{
+    margin-bottom: calc(var(--section-padding-30) / 2);
+}
+.no-btn{
+    margin-bottom: calc(var(--section-padding-30));
+}
+
+
+/* Footer */
 .footer-div{
     text-align: left;
 }
@@ -152,6 +191,9 @@ footer{
 
     .main-img{
     padding: calc(var(--section-padding-30) / 2) 0px 0px 0px;
+    }
 
+    .survey-question {
+        font-size: 1.2rem;
     }
 }
