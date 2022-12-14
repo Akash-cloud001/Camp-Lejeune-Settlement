@@ -38,14 +38,14 @@ section{
     font-family: var(--ff-poppins);
     font-size: 0.9rem;
     text-align: center;
-    padding-bottom: calc(var(--section-padding-30));
+    padding-bottom: var(--section-padding-30);
 }
 footer{
     width: var(--section-width);
     font-family: var(--ff-poppins);
-    font-size: 0.9rem;
-    text-align: center;
-    padding-bottom: calc(var(--section-padding-30));
+    font-size: 0.8rem;
+    text-align: justify;
+    padding-bottom: calc(var(--section-padding-30) / 3) ;
     color: var(--ff-color-lightgrey);
 }
 
@@ -100,7 +100,15 @@ footer{
 .about-p{
     color: var(--ff-color-grey);
 }
-
+.footer-div{
+    text-align: left;
+}
+.footer-a{
+    /* display: block; */
+    text-align: left;
+    color: var(--ff-color-greylight);
+    padding-top: calc(var(--section-padding-30) / 2);
+}
 
 @media  screen and (max-width:768px) {
     section,
@@ -125,7 +133,9 @@ footer{
     footer{
         padding: calc(var(--section-padding-30) / 2) calc(var(--section-padding-30) / 3);
     }
-
+    footer{
+        font-size: 0.7rem;
+    }
     .nav-bar{
         font-size: 1rem;
     }
