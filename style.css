@@ -9,6 +9,7 @@
     --ff-poppins: 'Poppins', sans-serif;
 
     /* colors */
+    --ff-color-navBar: hsl(214, 52%, 25%);
     --ff-color-red: hsl(5, 100%, 50%);
     --ff-color-yellow: hsl(56, 100%, 50%);
     --ff-color-orange: hsl(44deg 100% 50%);
@@ -63,7 +64,7 @@ footer{
     font-weight: 800;
     font-size: 1.2rem;
     text-transform: uppercase;
-    background-color: hsl(214, 52%, 25%);
+    background-color: var(--ff-color-navBar);
 }
 .nav-bar img{
     height: 40px;
@@ -137,6 +138,19 @@ footer{
     margin-bottom: calc(var(--section-padding-30));
 }
 
+/* Hidden Content */
+.hidden-content{
+    height: auto;
+    width: 100%;
+    padding: var(--section-padding-30) 0px;
+    margin: 20px 0px;
+    font-size: 1.4rem;
+    border-top: 5px solid var(--ff-color-navBar);
+    background: whitesmoke;
+}
+.hide{
+    display: none;
+}
 
 /* Footer */
 .footer-div{

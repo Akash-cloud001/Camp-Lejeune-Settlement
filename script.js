@@ -1,5 +1,8 @@
 $(document).ready(()=>{
+    const surveyContainer = $(".survey-container");
     const surveyQuestion = $(".survey-question");
+    const surveyButtons = $(".survey-buttons");
+    const hiddenContent = $(".hidden-content");
     const yesBtn = $(".yes-btn");
     const noBtn = $(".no-btn");
 
@@ -10,13 +13,17 @@ $(document).ready(()=>{
     ]
 
     const answers=[true,false,false];
-  
+
     let userAnswers = [];
     let quesCount = 3;
-    let counter = 0;
+    let counter = 1;
 
     // default survey Question
     surveyQuestion.text(question[0]);
+
+    function showMessages(){
+
+    }
 
     // Function to change Ques and fill user answer array;
     function changeQuestion(ans){
@@ -28,23 +35,54 @@ $(document).ready(()=>{
     }
     function surveyAnalysis(){
         console.log(userAnswers, answers);
+        let flag="" ;
         for(let i=0; i<answers.length; i++){
             if(answers[i] != userAnswers[i]){
-                console.log("not matched");
-                return;
+                flag = "1$ PER MINUTE"
+                break;
             }
         }
-        console.log("matched");
+        if(flag === ""){
+            flag = "FREE CONSULTATION CALL";
+        }
+        surveyQuestion.addClass('hide');
+        surveyButtons.addClass('hide');
+        hiddenContent.removeClass('hide');
+            
+        const surveyLines = [
+            "Reviewing your answers...",
+            "Matching You with the Best Options...",
+            "Confirm Eligibility..."
+        ]
+        let intervalId;
+        let i=0;
+        if(!intervalId){
+            intervalId = setInterval(()=>{
+                for( i;i<surveyLines.length;){
+                    hiddenContent.text(surveyLines[i]);
+                    console.log(i)
+                    i++;
+                    break;
+                }
+                if(i>=surveyLines.length){
+                    clearInterval(intervalId);
+                    setTimeout(()=>{
+                        hiddenContent.addClass('hide');
+                    },1000);
+                }
+            }, 1000);
+        }
+        
     }
 
     yesBtn.click(()=>{
         // To change ques
         //to fill user answer array
         let ans = yesBtn.data().val;
-        if(counter < quesCount){
+        if(counter <= quesCount){
             changeQuestion(ans);
             counter++;
-            if(counter>=quesCount)
+            if(counter>quesCount)
                 surveyAnalysis();
         }
     })
@@ -52,10 +90,10 @@ $(document).ready(()=>{
         // To change ques
         //to fill user answer array
         let ans = noBtn.data().val;
-        if(counter < quesCount){
+        if(counter <= quesCount){
             changeQuestion(ans);
             counter++;
-            if(counter>=quesCount)
+            if(counter>quesCount)
                 surveyAnalysis();
         }
     })
